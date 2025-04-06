@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$OUTAGEcoin: The Meme That Crashed the World</title>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #ff3300;
+            --light-color: #f5f5f5;
+            --dark-color: #333333;
+            --text-color: #222222;
+            --link-color: #0055aa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #004fa3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .article {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .article p {
+            margin-bottom: 20px;
+        }
+        
+        .article h2 {
+            font-size: 28px;
+            margin: 40px 0 20px;
+        }
+        
+        .article h3 {
+            font-size: 22px;
+            margin: 30px 0 15px;
+        }
+        
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .article-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        
+        .token-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 30px;
+            width: calc(33.333% - 20px);
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 500px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .stat-card {
+                width: 100%;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">$OUTAGE</div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#buy">Buy $OUTAGE</a></li>
+                    <li><a href="outage-explained.html">Outage Explained</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/Blue-screen.png" alt="Blue Screen of Death" class="hero-image">
+        <div class="hero-content">
+            <h1>$OUTAGEcoin: The Meme That Crashed the World</h1>
+            <p>Born from the chaos of the April 5, 2025 global IT outage — when 8.5 million Windows machines went dark.</p>
+            <a href="#buy" class="btn btn-primary">Buy $OUTAGE</a>
+        </div>
+    </section>
+
+    <!-- Main Article Section -->
+    <section class="section">
+        <div class="container">
+            <article class="article">
+                <p class="article-lead">On April 5, 2025, a massive IT crash sent shockwaves through the global economy. As 8.5 million Windows machines displayed the infamous blue screen of death, a new cryptocurrency was born from the digital chaos.</p>
+                
+                <div class="image-container">
+                    <img src="images/article.png" alt="OUTAGEcoin News Article" class="article-image">
+                    <p class="image-caption">News of the global outage spread rapidly across media outlets worldwide.</p>
+                </div>
+                
+                <h2>The Birth of $OUTAGE</h2>
+                <p>As CrowdStrike's faulty update brought down everything from airport displays to hospital systems, a group of developers saw opportunity in the chaos. Within hours of the outage, OUTAGEcoin was deployed on the Ethereum blockchain as an ERC-20 token.</p>
+                <p>"It wasn't a bug. It was a launch event," claims the anonymous developer behind the project, who goes by the pseudonym "BlueScreen."</p>
+                
+                <h3>Tech Giants React</h3>
+                <p>The crisis has sparked reactions from tech leaders around the world. Notably, Elon Musk couldn't resist taking a jab at Microsoft during the outage.</p>
+                
+                <div class="image-container">
+                    <img src="images/Elon.jpg" alt="Elon Musk Mocking Microsoft" class="article-image">
+                    <p class="image-caption">Elon Musk publicly mocked Microsoft during the global outage.</p>
+                </div>
+                
+                <div class="image-container">
+                    <img src="images/Elon2.jpg" alt="Elon Musk Tweet" class="article-image">
+                    <p class="image-caption">"Macrohard >> Microsoft" - Elon Musk on X (formerly Twitter)</p>
+                </div>
+                
+                <h2>Token Economics</h2>
+                <p>$OUTAGE has a total supply of 8.5 million tokens — one for each computer affected by the crash. The tokenomics include:</p>
+                <ul>
+                    <li>50% available for public trading</li>
+                    <li>20% reserved for development</li>
+                    <li>15% for marketing initiatives</li>
+                    <li>10% for community rewards</li>
+                    <li>5% for partnerships with actual IT security firms</li>
+                </ul>
+                
+                <div class="token-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">8.5M</div>
+                        <div class="stat-label">Total Supply</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$0.00042</div>
+                        <div class="stat-label">Current Price</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">32,581</div>
+                        <div class="stat-label">Holders</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="buy">
+        <div class="container">
+            <h2>Ready to Own a Piece of IT History?</h2>
+            <p>When life gives you blue screens, mint tokens.</p>
+            <a href="#" class="btn btn-primary">Buy $OUTAGE Now</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 OUTAGEcoin. This is a satirical project.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">Discord</a>
+                <a href="#">Telegram</a>
+            </div>
+            <p class="disclaimer">$OUTAGE is a meme token with no intrinsic value or expectation of financial return. There is no formal team or roadmap. The coin exists purely as satire.</p>
+        </div>
+    </footer>
+</body>
+</html>
